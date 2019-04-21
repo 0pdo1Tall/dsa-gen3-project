@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="92618eb6-d3c9-403a-a435-707a21c2a410" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="252" column="25" selection-start-line="252" selection-start-column="25" selection-end-line="252" selection-end-column="25" />
+              <folding>
+                <element signature="e#15#33#0" expanded="true" />
+                <element signature="e#4678#5330#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="133" column="32" selection-start-line="133" selection-start-column="32" selection-end-line="133" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#447#640#0" />
+                <element signature="e#672#2041#0" />
+                <element signature="e#2075#4859#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trainSet.set">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/getResult.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="11" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>]9</find>
+      <find>4</find>
+      <find>wei</find>
+      <find>1.1526811 ,  1.2897618</find>
+      <find>[[array([ 1.15268</find>
+      <find>[[array([ 1.1526811 ,  1.28976185, -0.60319682]), array([-0.46189582,</find>
+      <find>[[array([ 1.1526811 ,  1.28976185, -0.60319682]), array([-0.46189582,  1.38285727, -0.08807223]), array([ 0.01197867, -0.10650027, -0.16734783]), array([-0.00157786, -1.29499341,  0.06054438]), array([ 0.48191148, -0.87930664,  0.00530102])], [array([-0.93151697,  1.03732021, -0.01704417,  0.83616557,  0.20077004]), array([ 1.2409922 , -0.00697063, -0.0595402 ,  0.01392507,  0.91454457]), array([-0.20332108,  0.92781467, -0.0140349 ,  1.39413131,  0.83757439]), array([ 0.10219695,  0.29892424,  0.67900853, -0.02644662, -0.13480425]), array([ 0.30468484,  0.86799557, -0.22404845, -0.21964653,  0.05042047])], [array([-0.62227133,  0.3951096 , -1.94560638,  0.05763493, -1.65936854])]][[0.7336333629414258, 0.019467763114401793, 0.7219220478535295, 0.04679758449314005, -0.010021739317541467], [0.4789836447133151, -0.2582585276896896, 0.1533916123745922, 0.12057447800303422, -0.6714251708126082], [0.3957335508266233]]</find>
+      <find>,</find>
+      <find>[[array([-0.97365331, -1.5670574 , -0.14873433]</find>
+      <find>[[array([-0.97365331, -1.5670574 , -0.14873433]), array([-0.75018697, -1.96860871,  1.0394888 ]), array([-1.9263975 , -0.28125842,  0.61143099]), array([ 0.60585594, -1.13847869,  1.86955188]), array([-0.6951355 , -0.61551227,  0.65898694])], [array([0.96288756, 0.84968042, 1.59997357, 1.54037304, 1.48738866]), array([ 1.91658147, -1.38632253,  1.21529856,  1.84790964, -1.73706898]), array([ 1.14981275,  0.45632955, -1.11987304, -0.54599771,  1.21098824]), array([ 1.56160033, -1.32370121,  1.50037323, -0.40124074, -0.14055705]), array([ 0.92350767,  1.81929495,  1.79315418, -1.7156622 , -0.94069765])], [array([ 1.11726413,  1.68854042,  1.80261661,  0.32446081, -1.0044774 ])]][[-0.8080200623400322, 0.01875023995469105, 0.485856190096418, 0.6292670088182881, 0.8775963645852765], [-0.531505555613508, 0.7105396153417707, 0.10363188507661159, -0.1471898224955961, -0.3585438046447087], [-0.5013982280415028]]</find>
+      <find>[[array([ 1.29290636, -0.76737136, -1.21312068]), array([0.84915999, 1.95605084, 0.87287707]), array([-1.34129153,  1.34353516,  0.78492351]), array([ 1.91440608,  0.51022871, -1.92758147]), array([-1.94185052,  1.69945333,  1.69051824])], [array([-0.58522745,  1.43860995,  0.67150157, -1.0418345 ,  0.94627367]), array([-1.14297392,  1.76441775, -1.10177071,  0.51880425,  1.68434401]), array([ 0.83568193, -1.24670478,  0.40774686,  1.5015538 , -1.74698434]), array([1.75509402, 0.13519042, 1.82601921, 1.00119263, 0.18367911]), array([-1.11502692,  0.55099671,  1.70404267, -1.80672492,  1.25571941])], [array([ 0.27283136,  1.10339599, -1.72652122,  1.87539725,  0.44213856])]][[-0.41615283673608094, 0.18667387809823088, -0.9729108908604875, -0.7907440588584813, -0.8437548587390049], [-0.9460917699010889, -0.0317379752351683, -0.42150845768843315, -0.09089450205573213, -0.984034622631333], [-0.25831741966208455]]</find>
+      <find>[[array([ 1.29290636, -0.76737136, -1.21312068]), array([0.84915999, 1.95605084, 0.87287707]), array([-1.34129153,  1.34353516,  0.78492351]), array([ 1.91440608,  0.51022871, -1.92758147]), array([-1.94185052,  1.69945333,  1.69051824])], [array([-0.58522745,  1.43860995,  0.67150157, -1.0418345 ,  0.94627367]), array([-1.14297392,  1.76441775, -1.10177071,  0.51880425,  1.68434401]), array([ 0.83568193, -1.24670478,  0.40774686,  1.5015538 , -1.74698434]), array([1.75509402, 0.13519042, 1.82601921, 1.00119263, 0.18367911]), array([-1.11502692,  0.55099671,  1.70404267, -1.80672492,  1.25571941])], [array([ 0.27283136,  1.10339599, -1.72652122,  1.87539725,  0.44213856])]][[-0.41615283673608094, 0.18667387809823088, -0.9729108908604875, -0.7907440588584813, -0.8437548587390049], [-0.9460917699010889, -0.0317379752351683, -0.42150845768843315, -0.09089450205573213, -0.984034622631333], [-0.25831741966208455]</find>
+      <find>[[array([ 0.92794832, -1.7768885 ,  1.18553971]), array([ 1.86919248, -1.71355234, -0.60983458]), array([-0.47712145,  1.65562089,  0.7341893 ]), array([ 1.69225474, -0.85709741, -1.5939313 ]), array([ 0.22895466, -0.2160804 ,  0.97969462])], [array([ 0.92725908,  1.94868893, -1.05613303,  1.13126506,  0.70939056]), array([-0.67213435, -1.88316833,  0.57699435,  0.7288424 , -0.65309725]), array([ 1.72833322, -0.71779223, -0.86277965, -1.53271256,  0.14865829]), array([-0.78750802,  0.51831381, -1.27093035, -0.36110746,  1.03514036]), array([-1.91008744,  0.69460522,  0.83118001, -0.57635299, -0.06891295])], [array([-1.95163113, -1.59156454,  0.23508468,  0.95512092,  1.52509737])]][[0.4342304944367259, -0.09303885142901791, 0.42006217326924045, -0.3103200344188297, 0.22464088768474033], [0.5829160092484156, 0.6272145170324244, -0.010756810903429948, 0.666544775685735, -0.36096934551461546], [0.209812918141</find>
+      <find>0.92794832</find>
+      <find>[array([0.00011808, 0.01382157, 0.00099447])</find>
+      <find>[ 0.02368267, -0.27333658, -0.02875348</find>
+      <find>-0.04553261137904241</find>
+      <find>[[array([ 0.03747997,  0.88592488, -0.07</find>
+      <find>[[array([ 0.03747997,  0.88592488, -0.</find>
+      <find />
+      <find>[[array</find>
+      <find>None</find>
+      <find>[[array([5.89827524e-02, 4.68816469e-06, 2.88717544e-02]), array([ 7.96359791e-03, -9.07466348e-03,  8.07343948e-06]), array([-0.00461994, -0.00106975,  0.02482242]), array([ 2.18014332e-05, -4.17585761e-07,  2.83582700e-05]), array([ 2.36532686e-07,  2.53608703e-04, -3.05896456e-03])], [array([-2.00258797e-05,  1.15674274e-04, -1.41429624e-03, -1.63413181e-05,-3.98262819e-08]), array([4.61273044e-02, 9.99001134e-01, 1.05251136e-05, 2.53009721e-03,2.48682552e-06]), array([-2.98581943e-05,  6.73550774e-05,  2.71801893e-06,  2.57951340e-03,-2.45943040e-03]), array([ 2.61719238e-08, -2.46635523e-04, -2.05164953e-04, -7.89211236e-03,-5.00362550e-02]), array([-0.00109093, -0.00501561, -0.00265046, -0.00528413,  0.12375395])], [array([-2.56949349e-03, -1.55639474e-04,  5.31907751e-08,  3.26827557e-02, 1.64433903e-03])]][[0.8332153782538554, -0.029280727835596425, -0.5610355800615916, 0.0306119384035826, 0.010075609469302365], [1.398803699909468e-05, 5.862719081684584e-05, -0.004359384300603859, 0.15501269345554802, -0.17314718836521803], [1.435333371679332e-05]]1</find>
+      <find>players[0]</find>
+      <find>p</find>
+      <find>count</find>
+      <find>coun</find>
+      <find>distance</find>
+      <find>genSpike</find>
+      <find>spikeList</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>('data/</replace>
+      <replace>spike</replace>
+      <replace>player[0]</replace>
+      <replace>isCollided(leftSpike,rightSpike</replace>
+      <replace>mode</replace>
+      <replace>state</replace>
+      <replace>trainTest</replace>
+      <replace>testingGen</replace>
+      <replace>playerList</replace>
+      <replace>genList</replace>
+      <replace>players</replace>
+      <replace>p</replace>
+      <replace>1</replace>
+      <replace>player</replace>
+      <replace>0</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/fundermental.py" />
+        <option value="$PROJECT_DIR$/data/score.txt" />
+        <option value="$PROJECT_DIR$/generations/t.txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[50].txt" />
+        <option value="$PROJECT_DIR$/base.py" />
+        <option value="$PROJECT_DIR$/bird.py" />
+        <option value="$PROJECT_DIR$/generations/gen_[3].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[5].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[4].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[1].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[9].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[6].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[63].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[7].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[39].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[53].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[16].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[38].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[67].txt" />
+        <option value="$PROJECT_DIR$/NN.py" />
+        <option value="$PROJECT_DIR$/generations/gen_[73].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[78].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[82].txt" />
+        <option value="$PROJECT_DIR$/generations/gen_[119].txt" />
+        <option value="$PROJECT_DIR$/new.py" />
+        <option value="$PROJECT_DIR$/generations/gen_[113].txt" />
+        <option value="$PROJECT_DIR$/trainSet.set" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="614" />
+    <option name="y" value="85" />
+    <option name="width" value="620" />
+    <option name="height" value="720" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="myFeakingBird" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myFeakingBird" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="base" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="myFuckingBird" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/base.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bird" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="myFuckingBird" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bird.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="myFuckingBird" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="new" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="myFuckingBird" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\tien\PycharmProjects\myFeakingBird\getResult.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="myFuckingBird" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.new" />
+        <item itemvalue="Python.bird" />
+        <item itemvalue="Python.base" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="92618eb6-d3c9-403a-a435-707a21c2a410" name="Default Changelist" comment="" />
+      <created>1553965503127</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553965503127</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17408586" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49920508" visible="true" weight="0.31987578" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007949" side_tool="true" weight="0.33385092" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49920508" visible="true" weight="0.33385092" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007949" side_tool="true" weight="0.33385092" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/generations/gen_[8].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="844" column="417" selection-start-line="842" selection-end-line="844" selection-end-column="417" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[7].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="9" column="38" selection-start-line="9" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[6].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="72" lean-forward="true" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[25].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[26].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[33].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[35].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[30].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[45].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[39].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5256">
+          <caret line="499" column="1073" selection-start-line="499" selection-start-column="1073" selection-end-line="499" selection-end-column="1073" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[53].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="500" selection-start-line="500" selection-end-line="500" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[1].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="100" lean-forward="true" selection-start-line="5" selection-start-column="100" selection-end-line="5" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[16].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8216" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[20].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[21].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="422" selection-end-line="4" selection-end-column="422" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[19].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="100" lean-forward="true" selection-start-line="13" selection-start-column="100" selection-end-line="13" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[22].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[29].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="8" column="422" selection-start-line="5" selection-end-line="8" selection-end-column="422" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[24].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="100" selection-start-line="10" selection-start-column="100" selection-end-line="10" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[23].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="100" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[34].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-437">
+          <caret line="33" column="422" selection-start-line="30" selection-end-line="33" selection-end-column="422" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[28].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[37].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[38].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="500" lean-forward="true" selection-start-line="500" selection-end-line="500" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-504">
+          <caret line="39" column="70" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[42].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="826" column="422" selection-start-line="822" selection-end-line="826" selection-end-column="422" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[41].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[49].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="421" selection-start-line="10" selection-end-line="14" selection-end-column="421" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[48].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="9" column="422" selection-start-line="5" selection-end-line="9" selection-end-column="422" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[55].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[54].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[56].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[58].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[57].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[59].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[64].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bird.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#255#361#0" />
+            <element signature="e#487#696#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[65].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30226">
+          <caret line="1778" lean-forward="true" selection-start-line="1778" selection-end-line="1778" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[63].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="381" lean-forward="true" selection-start-line="11" selection-start-column="381" selection-end-line="11" selection-end-column="382" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[67].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8238" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
+          <folding>
+            <element signature="e#15#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[73].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8238" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[76].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[78].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[82].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[119].txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="500" selection-end-line="500" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generations/gen_[113].txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainSet.set">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="252" column="25" selection-start-line="252" selection-start-column="25" selection-end-line="252" selection-end-column="25" />
+          <folding>
+            <element signature="e#15#33#0" expanded="true" />
+            <element signature="e#4678#5330#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getResult.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="133" column="32" selection-start-line="133" selection-start-column="32" selection-end-line="133" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#447#640#0" />
+            <element signature="e#672#2041#0" />
+            <element signature="e#2075#4859#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
