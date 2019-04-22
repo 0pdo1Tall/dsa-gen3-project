@@ -1,0 +1,1022 @@
+#include <iostream>
+#include <time.h>
+#include <conio.h>
+#include "console.h"
+#include <fstream>
+#include <windows.h>
+#include <mmsystem.h>
+#include <string.h>
+#include <string>
+#include <sstream>
+
+#define ConsoleWidth 79
+#define ConsoleHeight 30
+
+using namespace std;
+
+//Khởi tạo các kiểu dữ liệu quan trọng trong game
+
+int diem = 0;
+int Flag = 0;
+
+enum TrangThai {ON, OFF, KTT};
+
+struct ToaDo
+{
+    int x, y;
+};
+
+struct Box
+{
+    char character;
+    int color;
+};
+
+Box Buffer[ConsoleHeight][ConsoleWidth];
+
+void Draw_a_Box(int row, int column, char character, int color)
+{
+    Buffer[row][column].character = character;
+    Buffer[row][column].color = color;
+}
+
+void KhoiTaoBuffer()
+{
+    for(int i = 1; i < ConsoleHeight; i++)
+    {
+        for(int j = 1; j < ConsoleWidth; j++){
+            Buffer[i][j].character = ' ';
+            Buffer[i][j].color = 15;
+        }
+    }
+}
+
+struct HinhDang
+{
+    char a[3][3];
+    char b[3][1];
+};
+
+//Tên lửa của mình
+struct Fighter{
+    ToaDo td;
+    HinhDang hd;
+};
+
+//Tàu địch Lever 1
+struct Enemy
+{
+    ToaDo td;
+    HinhDang hd;
+    TrangThai tt;
+    int HP;
+};
+
+struct DsEnemy{
+    Enemy e[100];
+    int n;
+    int START;
+    int END;
+};
+
+//Đạn lever 1
+struct Dan1 //Loại đạn thứ 1
+{
+    ToaDo td;
+    TrangThai tt;
+};
+
+struct DsDan1
+{
+    Dan1 *d1; //Mảng các đạn.
+    int n; //Số lượng đạn.
+    int START; //Viên đạn vừa duyệt. (Quản lý đạn)
+    int END; //Viên đạn cuối cùng trước khi kết thúc
+};
+
+struct Dan2 //Loại đạn thứ 2
+{
+    ToaDo td;
+    TrangThai tt;
+    HinhDang hd;
+};
+
+struct DsDan2
+{
+    Dan2 *d2; //Mảng các đạn.
+    int n; //Số lượng đạn.
+    int START; //Viên đạn vừa duyệt. (Quản lý đạn)
+    int END; //Viên đạn cuối cùng trước khi kết thúc
+};
+
+struct Dan3
+{
+    ToaDo td;
+    TrangThai tt;
+};
+
+struct DsDan3
+{
+    Dan3 *d3;
+    int n;
+    int END;
+};
+
+void KhoiTaoTenLua(Fighter &ft)
+{
+    ft.td.y = ConsoleHeight / 2;
+    ft.td.x = 1;
+
+    ft.hd.a[0][0] = 187;
+    ft.hd.a[1][0] = 186;
+    ft.hd.a[2][0] = 188;
+    ft.hd.a[0][1] = '=';
+    ft.hd.a[1][1] = 219;
+    ft.hd.a[2][1] = '=';
+    ft.hd.a[0][2] = ' ';
+    ft.hd.a[1][2] = '>';
+    ft.hd.a[2][2] = ' ';
+}
+
+void KhoiTaoDanhSachEnemy(DsEnemy &dse)
+{
+    //Khởi tạo có 100 tàu địch và tất cả đang trong trạng thái OFF
+    dse.n = 100;
+    dse.START = 0;
+    dse.END = 0;
+
+    //Khởi tạo hình dáng cho 100 tàu
+    for(int i = 0; i < dse.n; i++)
+    {
+        dse.e[i].tt = KTT; //Khởi tạo trạng thái là OFF
+
+        dse.e[i].HP = 1; //Máu của địch 1 = 1;
+
+        //Khởi tạo hình dạng cho 100 con địch
+        dse.e[i].hd.a[0][0] = ' ';
+        dse.e[i].hd.a[1][0] = '<';
+        dse.e[i].hd.a[2][0] = ' ';
+        dse.e[i].hd.a[0][1] = 201;
+        dse.e[i].hd.a[1][1] = 206;
+        dse.e[i].hd.a[2][1] = 200;
+        dse.e[i].hd.a[0][2] = ' ';
+        dse.e[i].hd.a[1][2] = 246;
+        dse.e[i].hd.a[2][2] = ' ';
+    }
+}
+
+void KhoiTaoDanhSachEnemy2(DsEnemy &dse2)
+{
+    //Khởi tạo có 100 tàu địch và tất cả đang trong trạng thái OFF
+    dse2.n = 100;
+    dse2.START = 0;
+    dse2.END = 0;
+
+    //Khởi tạo tàu đầu tiên xuất phát.
+
+    //Khởi tạo hình dáng cho 100 tàu
+    for(int i = 0; i < dse2.n; i++)
+    {
+        dse2.e[i].tt = KTT;
+
+        dse2.e[i].HP = 2;
+
+        dse2.e[i].hd.a[0][0] = ' ';
+        dse2.e[i].hd.a[1][0] = '<';
+        dse2.e[i].hd.a[2][0] = ' ';
+        dse2.e[i].hd.a[0][1] = 201;
+        dse2.e[i].hd.a[1][1] = 206;
+        dse2.e[i].hd.a[2][1] = 200;
+        dse2.e[i].hd.a[0][2] = ' ';
+        dse2.e[i].hd.a[1][2] = 246;
+        dse2.e[i].hd.a[2][2] = ' ';
+    }
+}
+
+
+void KhoiTaoDan1(DsDan1 &dd1){
+    dd1.n = 20; //Khởi tạo tàu địch ban đầu có 20 viên đạn.
+    dd1.START = 0;
+    dd1.END = 0;
+    dd1.d1 = new Dan1[dd1.n]; //Cấp phát động
+    for(int i = 0; i < dd1.n; i++)
+    {
+        dd1.d1[i].tt = OFF; //Khởi tạo trạng thái cho tất cả viên đạn đang OFF
+    }
+}
+
+void KhoiTaoDan2(DsDan2 &dd2){
+    dd2.n = 10; //Khởi tạo ten lua ban đầu có 10 viên đạn.
+    dd2.START = 0;
+    dd2.END = 0;
+    dd2.d2 = new Dan2[dd2.n]; //Cấp phát động
+    for(int i = 0; i < dd2.n; i++)
+    {
+        dd2.d2[i].tt = OFF; //Khởi tạo trạng thái cho tất cả viên đạn đang OFF
+        dd2.d2[i].hd.b[0][0] = 4;
+        dd2.d2[i].hd.b[1][0] = ' ';
+        dd2.d2[i].hd.b[2][0] = 4;
+    }
+}
+
+void KhoiTaoDan3(DsDan3 &dd3){
+    dd3.n = 50; //Khởi tạo ten lua ban đầu có 5 viên đạn.
+    dd3.END = 0;
+    dd3.d3 = new Dan3[dd3.n]; //Cấp phát động
+    for(int i = 0; i < dd3.n; i++)
+        dd3.d3[i].tt = OFF;
+}
+
+//Hiển thị khung giao diện
+void HienThiKhung()
+{
+    for(int i = 0; i < ConsoleHeight; i++)
+    {
+        for(int j = 0; j < ConsoleWidth; j++)
+        {
+            if(i == 0 || i == ConsoleHeight - 1)
+                Draw_a_Box(i, j, 219, 9);
+        }
+    }
+}
+
+string player[4], score[4];
+
+void HienThiHighScore()
+{
+    for(int i = 17; i <= 27; i++)
+    {
+        for(int j = 10; j < ConsoleWidth - 10; j++)
+        {
+            if(j == 10 || j == ConsoleWidth - 11 || j == 42 || j == 14)
+                Draw_a_Box(i, j, 179, 3);
+            if(i  == 17 || i == 27)
+                Draw_a_Box(i, j, 196, 3);
+        }
+    }
+
+    string s1 = "STT";
+    for(int i = 0; i < 3; i++)
+        Draw_a_Box(18, 11 + i, s1[i], 12);
+    for(int i = 0; i < 4; i++)
+        Draw_a_Box(20 + i*2, 12, i + 49, 12);
+
+    string s2 = "Name Player";
+    for(int i = 0; i < 11; i++)
+        Draw_a_Box(18, 23 + i, s2[i], 14);
+
+    string s3 = "Score";
+    for(int i = 0; i < 5; i++)
+        Draw_a_Box(18, 54 + i, s3[i], 13);
+
+    for(int k = 0; k < 4; k++)
+    {
+        string name = player[k];
+        string sodiem = score[k];
+
+        for(int i = 0; i < name.length(); i++)
+        {
+            Draw_a_Box(20 + k*2, 18 + i, name[i], 14);
+        }
+        for(int i = 0; i < sodiem.length(); i++)
+        {
+            Draw_a_Box(20 + k*2, 55 + i, sodiem[i], 13);
+        }
+        gotoXY(20 + k*2, 20);
+
+    }
+}
+
+void HienThiHuongDan()
+{
+    for(int i = 19; i <= 27; i++)
+    {
+        for(int j = 10; j < ConsoleWidth - 10; j++)
+        {
+            if(j == 10 || j == ConsoleWidth - 11 || j == 39)
+                Draw_a_Box(i, j, 179, 13);
+            if(i  == 19 || i == 27)
+                Draw_a_Box(i, j, 196, 13);
+        }
+    }
+
+    string M_0 = "DI CHUYEN : ";
+    string M_1 = "A = LUI LAI";
+    string M_2 = "D = TIEN LEN";
+    string M_3 = "S = DI XUONG";
+    string M_4 = "W = DI LEN";
+
+    for(int i = 0; i < M_0.length(); i++)
+        Draw_a_Box(23, 11 + i, M_0[i], 14);
+    for(int i = 0; i < M_1.length(); i++)
+        Draw_a_Box(20, 24 + i, M_1[i], 14);
+    for(int i = 0; i < M_2.length(); i++)
+        Draw_a_Box(22, 24 + i, M_2[i], 14);
+    for(int i = 0; i < M_3.length(); i++)
+        Draw_a_Box(24, 24 + i, M_3[i], 14);
+    for(int i = 0; i < M_4.length(); i++)
+        Draw_a_Box(26, 24 + i, M_4[i], 14);
+
+    string A_0 = "TAN CONG : ";
+    string A_1 = "J : DAN DON";
+    string A_2 = "K : DAN DOI";
+    string A_3 = "L : DAN LAZE";
+    string A_4 = "SPACE : TEN LUA";
+
+    for(int i = 0; i < A_0.length(); i++)
+        Draw_a_Box(23, 40 + i, A_0[i], 12);
+    for(int i = 0; i < A_1.length(); i++)
+        Draw_a_Box(20, 53 + i, A_1[i], 12);
+    for(int i = 0; i < A_2.length(); i++)
+        Draw_a_Box(22, 53 + i, A_2[i], 12);
+    for(int i = 0; i < A_3.length(); i++)
+        Draw_a_Box(24, 53 + i, A_3[i], 12);
+    for(int i = 0; i < A_4.length(); i++)
+        Draw_a_Box(26, 53 + i, A_4[i], 12);
+}
+
+void About()
+{
+    for(int i = 17; i <= 26; i++)
+    {
+        for(int j = 14; j < ConsoleWidth - 10; j++)
+        {
+            if(j == 14 || j == ConsoleWidth - 11)
+                Draw_a_Box(i, j, 179, 3);
+            if(i == 17 || i == 26)
+                Draw_a_Box(i, j, 196, 3);
+        }
+    }
+    string s1 = "Name Game : Fighter Shoot";
+    string s2 = "Created by : Nguyen Van Chien";
+    string s3 = "-=. EGG CLUB .=-";
+    string s4 = "Hanoi University of Science and Technology";
+
+    for(int i = 0; i < s1.length(); i++)
+        Draw_a_Box(18, 29 + i, s1[i], 14);
+    for(int i = 0; i < s2.length(); i++)
+        Draw_a_Box(20, 28 + i, s2[i], 13);
+    for(int i = 0; i < s3.length(); i++)
+        Draw_a_Box(22, 32 + i, s3[i], 10);
+    for(int i = 0; i < s4.length(); i++)
+        Draw_a_Box(24, 22 + i, s4[i], 12);
+
+}
+
+string NamePlayer;
+
+int LuaChon(int key)
+{
+    if(key == 17)
+    {
+        clrscr();
+        ofstream FileIn;
+        FileIn.open("SaveGame.txt", ios::app);
+        gotoXY(ConsoleWidth/2 - 15, ConsoleHeight/2);
+        TextColor(14);
+        cout << "Enter your name : ";
+        string my_string;
+        getline(cin, my_string);
+        NamePlayer = my_string;
+        FileIn << my_string;
+        FileIn << '\n';
+        clrscr();
+        string s1 = "Hello ", s2 = ". Are you ready ?";
+        s1 += my_string;
+        s1 += s2;
+        for(int i = 0; i < s1.length(); i++)
+        {
+            gotoXY(ConsoleWidth/2 - 15 + i, ConsoleHeight/2);
+            cout << s1[i];
+            Sleep(100);
+        }
+        _getch();
+        return -1;
+    }
+    else if(key == 19)
+    {
+        return 1;
+    }
+    else if(key == 21)
+    {
+        return 0;
+    }
+    else if(key == 23)
+    {
+        return 2;
+    }
+    else if(key == 25)
+    {
+        exit(0);
+    }
+}
+
+// Hiển thị Menu
+int HienThiMenu(int &key, int &check)
+{
+    int a, b, c, d, e;
+    if(key == 17)
+    {
+        a = -3;
+        b = c = d = e = 0;
+    }
+    else if(key == 19)
+    {
+        b = -3;
+        a = c = d = e = 0;
+    }
+    else if(key == 21)
+    {
+        c = -3;
+        b = a = d = e = 0;
+    }
+    else if(key == 23)
+    {
+        d = -3;
+        b = c = a = e = 0;
+    }
+    else if(key == 25)
+    {
+        e = -3;
+        b = c = d = a = 0;
+    }
+    string s1 = "NEW GAME";
+    string s2 = "TUTORIAL";
+    string s3 = "HIGH SCORE";
+    string s4 = "ABOUT";
+    string s5 = "QUIT";
+
+    if(check == -1)
+    {
+        Draw_a_Box(key, 31, 4, 10);
+
+        for(int i = 0; i < s1.length(); i++)
+            Draw_a_Box(17, 33 + i, s1[i], 15 + a);
+
+        for(int i = 0; i < s2.length(); i++)
+            Draw_a_Box(19, 33 + i, s2[i], 15 + b);
+
+        for(int i = 0; i < s3.length(); i++)
+            Draw_a_Box(21, 33 + i, s3[i], 15 + c);
+
+        for(int i = 0; i < s4.length(); i++)
+            Draw_a_Box(23, 33 + i, s4[i], 15 + d);
+
+        for(int i = 0; i < s5.length(); i++)
+            Draw_a_Box(25, 33 + i, s5[i], 15 + e);
+    }
+    else if(check == 0)
+        HienThiHighScore();
+    else if(check == 1)
+        HienThiHuongDan();
+    else if(check == 2)
+        About();
+
+    gotoXY(0, 17);
+    for(int i = 17; i < ConsoleHeight; i++)
+    {
+        for(int j = 0; j < ConsoleWidth; j++)
+        {
+            TextColor(Buffer[i][j].color);
+            cout << Buffer[i][j].character;
+            Buffer[i][j].character = ' ';
+        }
+        if(i < ConsoleHeight - 1)
+            cout << endl;
+    }
+
+    if(_kbhit())
+    {
+        char x = _getch();
+        if((x == 'S' || x == 's') && key <= 23)
+            key += 2;
+        else if((x == 'W' || x == 'w') && key >= 19)
+            key -=2;
+        else if(x == 13)
+        {
+            if(LuaChon(key) == -1)
+                return -1;
+            else if(LuaChon(key) == 0)
+                check = 0;
+            else if(LuaChon(key) == 1)
+                check = 1;
+            else if(LuaChon(key) == 2)
+                check = 2;
+        }
+        else if(x == 8)
+            check = -1;
+
+    }
+
+}
+//-----------------------------------------------------------------------------------------
+
+void HienThiTenLua(Fighter ft)
+{
+    for(int i = -1; i <= 1; i++)
+    {
+        for(int j = -1; j <= 1; j++)
+        {
+            Draw_a_Box(ft.td.y + i, ft.td.x + j, ft.hd.a[i + 1][j + 1], 14);
+        }
+    }
+}
+
+void HienThiTauDich(DsEnemy &dse)
+{
+    for(int k = dse.START; k <= dse.END; k++)
+    {
+        if(dse.e[k].tt == ON)
+        {
+            for(int i = -1; i <= 1; i++)
+            {
+                for(int j = -1; j <= 1; j++)
+                {
+                    Draw_a_Box(dse.e[k].td.y + i, dse.e[k].td.x + j, dse.e[k].hd.a[i + 1][j + 1], 12);
+                }
+            }
+        }
+        if(dse.e[k].td.x == 1)
+        {
+            dse.e[k].tt = OFF;
+            dse.e[k].td.x = -15;
+            dse.e[k].td.y = -15;
+            diem++;
+        }
+    }
+}
+
+void HienThiTauDich2(DsEnemy &dse2)
+{
+    for(int k = dse2.START; k <= dse2.END; k++)
+    {
+        if(dse2.e[k].tt == ON)
+        {
+            for(int i = -1; i <= 1; i++)
+            {
+                for(int j = -1; j <= 1; j++)
+                {
+                    Draw_a_Box(dse2.e[k].td.y + i, dse2.e[k].td.x + j, dse2.e[k].hd.a[i + 1][j + 1], 10);
+                }
+            }
+        }
+        if(dse2.e[k].td.x == 1)
+        {
+            dse2.e[k].tt = OFF;
+            dse2.e[k].td.x = -15;
+            dse2.e[k].td.y = -15;
+        }
+
+    }
+}
+
+void HienThiDan1(DsDan1 &dd1)
+{
+    for(int i = dd1.START; i <= dd1.END; i++)
+    {
+        if(dd1.d1[i].tt == ON)
+        {
+            Draw_a_Box(dd1.d1[i].td.y, dd1.d1[i].td.x, 4, 10);
+        }
+        if(dd1.d1[i].td.x == ConsoleWidth - 1)
+        {
+            dd1.d1[i].tt = OFF;
+            dd1.d1[i].td.x = -1;
+            dd1.d1[i].td.y = -1;
+        }
+    }
+}
+
+void HienThiDan2(DsDan2 &dd2)
+{
+    for(int i = dd2.START; i <= dd2.END; i++)
+    {
+        if(dd2.d2[i].tt == ON)
+        {
+            for(int j = -1; j <= 1; j++)
+                Draw_a_Box(dd2.d2[i].td.y + j, dd2.d2[i].td.x, dd2.d2[i].hd.b[j + 1][0], 9);
+        }
+        if(dd2.d2[i].td.x == ConsoleWidth - 1)
+        {
+            dd2.d2[i].tt = OFF;
+            dd2.d2[i].td.x = -1;
+            dd2.d2[i].td.y = -1;
+        }
+    }
+}
+
+void HienThiDiem()
+{
+    string pDiem = "DIEM : ";
+    stringstream ss;
+    ss << diem;
+    string str = ss.str();
+    pDiem += str;
+    for(int i = 0; i < pDiem.length(); i++)
+        Draw_a_Box(1, 0 + i, pDiem[i], 9);
+}
+
+void DisPlay(Fighter &ft, DsEnemy &dse,DsEnemy &dse2, DsDan1 &dd1, DsDan2 &dd2, DsDan3 &dd3)
+{
+    HienThiDiem();
+    HienThiKhung();
+    HienThiTenLua(ft);
+    HienThiTauDich(dse);
+    HienThiTauDich2(dse2);
+    HienThiDan1(dd1);
+    HienThiDan2(dd2);
+
+
+    //Vẽ Buffer
+    gotoXY(0, 0);
+    for(int i = 0; i < ConsoleHeight; i++)
+    {
+        for(int j = 0; j < ConsoleWidth; j++)
+        {
+            TextColor(Buffer[i][j].color);
+            cout << Buffer[i][j].character;
+            Buffer[i][j].character = ' ';
+        }
+        if(i < ConsoleHeight - 1)
+            cout << endl;
+    }
+}
+
+void ConTrol(Fighter &ft, DsEnemy &dse, DsEnemy &dse2, DsDan1 &dd1, DsDan2 &dd2, DsDan3 &dd3)
+{
+    //Di chuyển của tên lửa và bắn đạn
+    if(_kbhit())
+    {
+        char key = _getch();
+        if((key == 'W' || key == 'w') && ft.td.y > 2)
+            ft.td.y--;
+        else if((key == 'S' || key == 's') && ft.td.y <= ConsoleHeight - 4)
+            ft.td.y++;
+        else if((key == 'A' || key == 'a') && ft.td.x > 1)
+            ft.td.x--;
+        else if((key == 'D' || key == 'd') && ft.td.x <= ConsoleWidth - 3)
+            ft.td.x++;
+        else if((key == 'J' || key == 'j') && dd1.END < dd1.n)
+        {
+            dd1.d1[dd1.END].tt = ON;
+            dd1.d1[dd1.END].td.x = ft.td.x + 1;
+            dd1.d1[dd1.END].td.y = ft.td.y;
+            dd1.END++;
+        }
+        else if((key == 'K' || key == 'k') && dd2.END < dd2.n)
+        {
+            dd2.d2[dd2.END].tt = ON;
+            dd2.d2[dd2.END].td.x = ft.td.x + 1;
+            dd2.d2[dd2.END].td.y = ft.td.y;
+            dd2.END++;
+        }
+        else if((key == 'L' || key == 'l') && dd3.END < dd3.n)
+        {
+            dd3.d3[dd3.END].tt = ON; //ON : Da ban  , OFF : Chua ban
+            dd3.d3[dd3.END].td.x = ft.td.x + 2;
+            dd3.d3[dd3.END].td.y = ft.td.y;
+            int dX = dd3.d3[dd3.END].td.x, dY = dd3.d3[dd3.END].td.y;
+            for(int j = 0; j < ConsoleWidth - dd3.d3[dd3.END].td.x; j++)
+                Draw_a_Box(dY, dX + j, 219, 13);
+        }
+    }
+
+    //Xử lý viên đạn 1 di chuyển
+    for(int i = dd1.START; i <= dd1.END; i++)
+    {
+        if(dd1.d1[i].tt == ON)
+        {
+            dd1.d1[i].td.x++;
+        }
+    }
+
+    //Xử lý viên đạn 2 di chuyển
+    for(int i = dd2.START; i <= dd2.END; i++)
+    {
+        if(dd2.d2[i].tt == ON)
+        {
+            dd2.d2[i].td.x++;
+        }
+    }
+
+    //Sinh tàu địch 1
+    if(Flag % 20 == 0)
+    {
+        int k = 1;
+        while(k != 0)
+        {
+            dse.e[dse.END].td.x = ConsoleWidth - 2;
+            dse.e[dse.END].td.y = 2 + rand() % (ConsoleHeight - 4);
+            dse.e[dse.END].tt = ON;
+            dse.END++;
+            k--;
+        }
+    }
+
+    //Xử lý tàu dich 1 di chuyen
+    for(int i = dse.START; i <= dse.END; i++)
+    {
+        if(dse.e[i].tt == ON)
+        {
+            dse.e[i].td.x--;
+        }
+    }
+
+    //Xu lý tăng dần START
+    if(dse.e[dse.START].tt == OFF)
+        dse.START++;
+
+    //Xu ly sinh tau 2
+
+    if(Flag % 47 == 0)
+    {
+        int k = 1;
+        while(k != 0)
+        {
+            dse2.e[dse2.END].td.x = ConsoleWidth - 2;
+            dse2.e[dse2.END].td.y = 2 + rand() % (ConsoleHeight - 4);
+            dse2.e[dse2.END].tt = ON;
+            dse2.END++;
+            k--;
+        }
+    }
+
+    //Xu ly tau dich 2 di chuyen
+    for(int i = dse2.START; i < dse2.END; i++)
+    {
+        if(dse2.e[i].tt == ON && dse2.e[i].td.x >= 1)
+        {
+            dse2.e[i].td.x--;
+            int k = -1 + rand() % 3;
+            if(dse2.e[i].td.y + k > 1 && dse2.e[i].td.y + k < ConsoleHeight - 2)
+                dse2.e[i].td.y += k;
+        }
+    }
+
+    //Tăng dần biến START
+    if(dse2.e[dse2.START].tt == OFF)
+        dse2.START++;
+
+
+}
+
+int Process(Fighter ft, DsEnemy &dse, DsEnemy &dse2, DsDan1 &dd1, DsDan2 &dd2, DsDan3 &dd3)
+{
+    Flag++;
+    for(int i = dse.START; i <= dse.END; i++)
+    {
+        if(dse.e[i].tt == ON)
+        {
+            // Xu ly khi gap dan 1
+            for(int j = dd1.START; j <= dd1.END; j++)
+            {
+                int dX = abs(dse.e[i].td.x - dd1.d1[j].td.x);
+                int dY = abs(dse.e[i].td.y - dd1.d1[j].td.y);
+                if(dX <= 1 && dY <= 1)
+                {
+                    dd1.d1[j].tt = OFF;
+                    dd1.d1[j].td.x = -1;
+                    dd1.d1[j].td.y = -1;
+                    dse.e[i].HP--;
+                }
+            }
+            //Xu ly khi gap dan loai 2
+            for(int k = dd2.START; k <= dd2.END; k++)
+            {
+                int dX = abs(dse.e[i].td.x - dd2.d2[k].td.x);
+                int dY = abs(dse.e[i].td.y - dd2.d2[k].td.y);
+                if(dX <= 1 && dY <= 2)
+                {
+                    dd2.d2[k].tt = OFF;
+                    dd2.d2[k].td.x = -1;
+                    dd2.d2[k].td.y = -1;
+                    dse.e[i].HP--;
+                }
+            }
+
+            //Xu ly gap dan 3
+
+            if(abs(dse.e[i].td.y - dd3.d3[dd3.END].td.y) <=1 && dse.e[i].td.x > ft.td.x)
+                dse.e[i].HP--;
+
+            //Xử lý khi máu tàu địch = 0
+            if(dse.e[i].HP <= 0) // Nếu tàu địch hết máu mà vẫn đang ON
+            {
+                dse.e[i].tt = OFF;
+                dse.e[i].td.x = -10;
+                dse.e[i].td.y = -10;
+                diem += 2;
+            }
+
+            //Xu ly thua game
+            {
+                int dX = abs(ft.td.x - dse.e[i].td.x);
+                int dY = abs(ft.td.y - dse.e[i].td.y);
+                if(dX < 3 && dY < 3)
+                    return -1;
+            }
+
+        }
+        else
+            continue;
+
+    }
+
+    for(int i = dse2.START; i <= dse2.END; i++)
+    {
+        if(dse2.e[i].tt == ON)
+        {
+            // Xu ly khi gap dan 1
+            for(int j = dd1.START; j <= dd1.END; j++)
+            {
+                int dX = abs(dse2.e[i].td.x - dd1.d1[j].td.x);
+                int dY = abs(dse2.e[i].td.y - dd1.d1[j].td.y);
+                if(dX <= 1 && dY <= 1)
+                {
+                    dd1.d1[j].tt = OFF;
+                    dd1.d1[j].td.x = -1;
+                    dd1.d1[j].td.y = -1;
+                    dse2.e[i].HP--;
+                }
+            }
+
+            //Xu ly khi gap dan loai 2
+            for(int k = dd2.START; k <= dd2.END; k++)
+            {
+                int dX = abs(dse2.e[i].td.x - dd2.d2[k].td.x);
+                int dY = abs(dse2.e[i].td.y - dd2.d2[k].td.y);
+                if(dX <= 1 && dY <= 2)
+                {
+                    dd2.d2[k].tt = OFF;
+                    dd2.d2[k].td.x = -1;
+                    dd2.d2[k].td.y = -1;
+                    if(dX == 1 && dY == 0)
+                        dse2.e[i].HP -= 2;
+                    else
+                        //dse2.e[i].HP--;
+                }
+            }
+
+            //Xu ly gap dan 3
+
+            if(abs(dse2.e[i].td.y - dd3.d3[dd3.END].td.y) <= 1 && dse2.e[i].td.x > ft.td.x)
+                dse2.e[i].HP--;
+
+            //Xử lý phá tàu địch
+            if(dse2.e[i].HP <= 0)
+            {
+                dse2.e[i].tt = OFF;
+                dse2.e[i].td.x = -10;
+                dse2.e[i].td.y = -10;
+                diem += 3;
+            }
+
+            //Xu ly thua game
+            {
+                int dX = abs(ft.td.x - dse2.e[i].td.x);
+                int dY = abs(ft.td.y - dse2.e[i].td.y);
+                if(dX < 3 && dY < 3)
+                    return -1;
+            }
+        }
+        else continue;
+    }
+
+    //Xu ly loai bo dan 3
+    if(dd3.d3[dd3.END].tt == ON)
+    {
+            dd3.d3[dd3.END].td.x = -1;
+            dd3.d3[dd3.END].td.y = -1;
+            dd3.END++;
+    }
+    return 0;
+}
+
+int main()
+{
+    srand(time(0));
+
+    /*PlaySound("hay.wav", NULL, SND_FILENAME|SND_LOOP|SND_ASYNC);
+    //Giới thiệu game phân cảnh 1
+    ifstream FileIn;
+    FileIn.open("GioiThieu.txt", ios::in);
+
+    while(!FileIn.eof())
+    {
+        char c;
+        FileIn.get(c);
+        TextColor(12);
+        if(c == ' ')
+            TextColor(14);
+        cout << c;
+    }
+    Sleep(2000);
+    char s[] = "Welcome to my Fighter Shoot game. Press any key to start!!!";
+    int k = 0, l = 0;
+    for(int i = 0; i < strlen(s); i++)
+    {
+
+        if(s[i] == 'P')
+        {
+            k = 1;
+            l = -30;
+            Sleep(1000);
+        }
+        gotoXY(20 + i + l, 25 + k);
+        TextColor(14);
+        cout << s[i];
+        Sleep(50);
+    }
+    FileIn.close();
+    _getch();
+    clrscr();
+    //---------------------------------------------------------------------------------
+    //Giới thiệu game phân cảnh 2
+
+    ifstream FileIn1;
+    FileIn1.open("GioiThieu2.txt", ios::in);
+    while(!FileIn1.eof())
+    {
+        char c;
+        FileIn1.get(c);
+        TextColor(11);
+        Sleep(1);
+        cout << c;
+    }
+    FileIn1.close();
+
+
+    ifstream FileInIn;
+    FileInIn.open("SaveGame.txt", ios::in);
+    for(int i = 0; i < 4; i++)
+    {
+        getline(FileInIn, player[i]);
+        getline(FileInIn, score[i]);
+    }
+    int p = 17, check = -1;
+    while(1)
+    {
+        if(HienThiMenu(p, check) == -1)
+            break;
+    }*/
+
+
+    //Main Game :
+    PlaySound("BM.wav", NULL, SND_FILENAME|SND_LOOP|SND_ASYNC);
+    //Khai báo 3 đối tượng : Tên lửa, tàu địch và đạn
+    Fighter ft;
+    DsEnemy dse, dse2, dse3;
+    DsDan1 dd1;
+    DsDan2 dd2;
+    DsDan3 dd3;
+
+    //Khởi tạo 3 đối tượng này:
+    KhoiTaoBuffer();
+    KhoiTaoTenLua(ft);
+    KhoiTaoDanhSachEnemy(dse);
+    KhoiTaoDanhSachEnemy2(dse2);
+    KhoiTaoDan1(dd1);
+    KhoiTaoDan2(dd2);
+    KhoiTaoDan3(dd3);
+
+    //Hiển thị
+    while(1)
+    {
+        ConTrol(ft, dse, dse2, dd1, dd2, dd3);
+        DisPlay(ft, dse, dse2, dd1, dd2, dd3);
+        if(Process(ft, dse, dse2, dd1, dd2, dd3) == -1)
+            break;
+
+    }
+    ofstream GhiFile;
+    GhiFile.open("SaveGame.txt", ios::app);
+    GhiFile << diem;
+    GhiFile << '\n';
+    clrscr();
+
+    PlaySound("gameover.wav", NULL, SND_FILENAME|SND_LOOP|SND_ASYNC);
+    ifstream GameOver;
+    GameOver.open("GameOver.txt", ios::in);
+    while(!GameOver.eof())
+    {
+        char c;
+        GameOver.get(c);
+        TextColor(12);
+        Sleep(5);
+        cout << c;
+    }
+    _getch();
+    clrscr();
+    gotoXY(ConsoleWidth/2 - 10, ConsoleHeight/2 - 2);
+    cout << "Name Player : " << NamePlayer;
+    gotoXY(ConsoleWidth/2 - 10, ConsoleHeight/2 - 2 + 1);
+    cout << "Score : " << diem;
+
+    //Giai phong cac vung nho
+    delete[] dd1.d1;
+    delete[] dd2.d2;
+    delete[] dd3.d3;
+
+    _getch();
+    return 0;
+}

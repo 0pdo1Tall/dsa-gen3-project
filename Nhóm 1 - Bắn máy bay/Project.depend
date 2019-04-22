@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1553623333 source:c:\users\chien\downloads\project\project\console.cpp
+	<iostream>
+	<console.h>
+	<conio.h>
+	<time.h>
+	<windows.h>
+
+1555561152 source:c:\users\chien\downloads\project\project\main.cpp
+	<iostream>
+	<time.h>
+	<conio.h>
+	"console.h"
+	<fstream>
+	<windows.h>
+	<mmsystem.h>
+	<string.h>
+	<string>
+	<sstream>
+
+1443331617 c:\users\chien\downloads\project\project\console.h
+	<windows.h>
+
